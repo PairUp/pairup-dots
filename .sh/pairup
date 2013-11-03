@@ -1,0 +1,20 @@
+alias gh='git hub'
+
+# source ~/.sh/local-lang
+# source ~/.sh/local-lang.d/plenv
+# source ~/.sh/local-lang.d/rbenv
+# source ~/.sh/local-lang.d/nvm
+
+export TMUXESC=a
+
+tmux-esc() {
+    new=${1:?new esc char required}
+    old=$TMUXESC
+    [ ${#new} -eq 1 ] || {
+        echo "value needs to be 1 char" >&2
+        return 1
+    }
+    tmux set -g prefix C-$new
+    [ -n "$old" ] && tmux unbind C-$old
+    tmux bind C-$new send-prefix
+}

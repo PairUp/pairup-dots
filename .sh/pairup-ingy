@@ -1,8 +1,0 @@
-alias gh='git hub'
-
-# source ~/.sh/local-lang
-# source ~/.sh/local-lang.d/plenv
-# source ~/.sh/local-lang.d/rbenv
-# source ~/.sh/local-lang.d/nvm
-
-export TMUXESC=a
